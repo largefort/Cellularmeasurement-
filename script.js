@@ -3,25 +3,26 @@ document.addEventListener("DOMContentLoaded", function () {
     const speedText = document.getElementById("speed-text");
     const loader = document.getElementById("loader");
 
-    // Function to fetch network speed using navigator.connection API
-    async function getNetworkSpeed() {
+    // Function to fetch network speed and type
+    async function getNetworkInfo() {
         try {
             const connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
             const speed = connection.downlink || 0;
-            return speed.toFixed(2);
+            const type = connection.effectiveType || "unknown";
+            return { speed: speed.toFixed(2), type };
         } catch (error) {
-            throw new Error('Network speed measurement failed.');
+            throw new Error('Network information retrieval failed.');
         }
     }
 
     // Update network speed information
-    async function updateNetworkSpeed() {
+    async function updateNetworkInfo() {
         try {
             loader.style.display = "block";
-            const speed = await getNetworkSpeed();
-            speedText.innerText = `Current Speed: ${speed} Mbps`;
+            const { speed, type } = await getNetworkInfo();
+            speedText.innerText = `Current Speed: ${speed} Mbps (${type.toUpperCase()})`;
         } catch (error) {
-            speedText.innerText = "Error fetching speed";
+            speedText.innerText = "Error fetching network information";
         } finally {
             loader.style.display = "none";
         }
@@ -30,9 +31,9 @@ document.addEventListener("DOMContentLoaded", function () {
     // Redirect to loading screen after initial update
     document.getElementById("loading-link").click();
 
-    // Update speed every 5 seconds (adjust as needed)
-    setInterval(updateNetworkSpeed, 5000);
+    // Update speed and type every 5 seconds (adjust as needed)
+    setInterval(updateNetworkInfo, 5000);
 
     // Initial update
-    updateNetworkSpeed();
+    updateNetworkInfo();
 });
