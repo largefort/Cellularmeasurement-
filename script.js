@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Update speed and type every 5 seconds (adjust as needed)
-    setInterval(updateNetworkInfo, 5000);
+    setInterval(updateNetworkInfo, 1000);
 
     // Initial update
     updateNetworkInfo();
