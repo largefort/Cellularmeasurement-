@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const speedContainer = document.getElementById("speed-container");
     const speedText = document.getElementById("speed-text");
     const loader = document.getElementById("loader");
 
@@ -27,9 +26,6 @@ document.addEventListener("DOMContentLoaded", function () {
             loader.style.display = "none";
         }
     }
-
-    // Redirect to loading screen after initial update
-    document.getElementById("loading-link").click();
 
     // Update speed and type every 5 seconds (adjust as needed)
     setInterval(updateNetworkInfo, 5000);
