@@ -27,6 +27,9 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
+    // Redirect to loading screen after initial update
+    document.getElementById("loading-link").click();
+
     // Update speed every 5 seconds (adjust as needed)
     setInterval(updateNetworkSpeed, 5000);
 
