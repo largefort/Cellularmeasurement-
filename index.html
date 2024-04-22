@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="buttonstyleseffect.css">
     <title>Network Speed Test</title>
     <style>
@@ -16,6 +15,16 @@
             height: 100vh;
             background-color: #f2f2f2;
         }
+        #network-result {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: #fff;
+            font-size: 18px;
+            display: none; /* Initially hidden */
+        }
     </style>
 </head>
 <body>
@@ -24,9 +33,10 @@
         <div id="loader"></div>
     </div>
     <button id="start-button">
-        Start Measurement
+        <span class="network-result" id="network-result">Loading...</span>
         <div class="lightning"></div>
     </button>
     <script src="script.js"></script>
 </body>
 </html>
+
