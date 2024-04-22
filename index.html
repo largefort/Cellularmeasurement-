@@ -4,15 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="buttonstyleseffect.css">
     <title>Network Speed Test</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f2f2f2;
+        }
+    </style>
 </head>
 <body>
     <div id="speed-container">
         <p id="speed-text">Loading...</p>
         <div id="loader"></div>
     </div>
-    <button id="start-button" onclick="startMeasurement()">
+    <button id="start-button">
         Start Measurement
         <div class="lightning"></div>
     </button>
