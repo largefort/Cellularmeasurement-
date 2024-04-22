@@ -23,18 +23,18 @@
     height: 100%;
     background: url('lightning.gif') no-repeat;
     background-size: cover;
-    animation: lightning-animation 1s infinite;
+    animation: lightning-animation 5s infinite;
     opacity: 0;
 }
 
 @keyframes lightning-animation {
     0% {
-        opacity: 0;
+        opacity: 1;
     }
     50% {
         opacity: 1;
     }
     100% {
-        opacity: 0;
+        opacity: 1;
     }
 }
